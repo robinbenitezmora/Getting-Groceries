@@ -14,4 +14,24 @@ public class SupermarketLocal {
   throw new UnsupportedOperationException("Unimplemented method 'findProduct'");
  }
 
+ public List<Purchase> findPurchases() {
+  // TODO Auto-generated method stub
+  throw new UnsupportedOperationException("Unimplemented method 'findPurchases'");
+ }
+
+ public Purchase findPurchase(Long id) {
+  // TODO Auto-generated method stub
+  throw new UnsupportedOperationException("Unimplemented method 'findPurchase'");
+ }
+
+ public Purchase buy(Cart cart, User user) {
+  // TODO Auto-generated method stub
+  throw new UnsupportedOperationException("Unimplemented method 'buy'");
+ }
+
+ public User findUser(String name) {
+  // TODO Auto-generated method stub
+  throw new UnsupportedOperationException("Unimplemented method 'findUser'");
+ }
+
 }
