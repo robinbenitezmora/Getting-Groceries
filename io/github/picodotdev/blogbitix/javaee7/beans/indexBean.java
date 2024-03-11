@@ -12,7 +12,8 @@ public class indexBean {
   }
 
   public Cart getCart() {
-    Cart cart = (Cart) ((FacesContext) FacesContext.getCurrentInstance()).getExternalContext().getSessionMap()
+    Cart cart = (Cart) ((Object) ((FacesContext) FacesContext.getCurrentInstance()).getExternalContext())
+        .getSessionMap()
         .get("cart");
     if (cart == null) {
       cart = Cart.EMPTY;
@@ -25,10 +26,10 @@ public class indexBean {
   }
 
   public Integer getAmount(Product product) {
-    for (Map<String, String> item : getCart().getItems()) {
-      Long id = Long.parseLong(item.get("id"));
+    for (Iterable<String> item : getCart().getItems()) {
+      Long id = Long.parseLong(((Map<String, String>) item).get("id"));
       if (id.equals(product.getId())) {
-        return Integer.parseInt(item.get("amount"));
+        return Integer.parseInt(((Map<String, String>) item).get("amount"));
       }
     }
     return 0;

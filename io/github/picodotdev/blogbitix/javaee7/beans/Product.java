@@ -9,4 +9,9 @@ public class Product {
   throw new UnsupportedOperationException("Unimplemented method 'getPrice'");
  }
 
+ public Object getId() {
+  // TODO Auto-generated method stub
+  throw new UnsupportedOperationException("Unimplemented method 'getId'");
+ }
+
 }
