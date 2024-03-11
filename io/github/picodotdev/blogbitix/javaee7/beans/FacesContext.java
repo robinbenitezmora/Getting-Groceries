@@ -7,4 +7,9 @@ public class FacesContext {
   throw new UnsupportedOperationException("Unimplemented method 'getCurrentInstance'");
  }
 
+ public Object getExternalContext() {
+  // TODO Auto-generated method stub
+  throw new UnsupportedOperationException("Unimplemented method 'getExternalContext'");
+ }
+
 }
