@@ -2,36 +2,21 @@ package io.github.picodotdev.blogbitix.javaee7.beans;
 
 import java.util.List;
 
-public class SupermarketLocal {
+@Local
 
- public List<Product> findProducts() {
-  // TODO Auto-generated method stub
-  throw new UnsupportedOperationException("Unimplemented method 'findProducts'");
- }
+public interface SupermarketLocal {
 
- public Product findProduct(Long id) {
-  // TODO Auto-generated method stub
-  throw new UnsupportedOperationException("Unimplemented method 'findProduct'");
- }
+ List<Product> findProducts();
 
- public List<Purchase> findPurchases() {
-  // TODO Auto-generated method stub
-  throw new UnsupportedOperationException("Unimplemented method 'findPurchases'");
- }
+ Product findProduct(Long id);
 
- public Purchase findPurchase(Long id) {
-  // TODO Auto-generated method stub
-  throw new UnsupportedOperationException("Unimplemented method 'findPurchase'");
- }
+ void persistProduct(Product product);
 
- public Purchase buy(Cart cart, User user) {
-  // TODO Auto-generated method stub
-  throw new UnsupportedOperationException("Unimplemented method 'buy'");
- }
+ void deleteProduct(Product product);
 
- public User findUser(String name) {
-  // TODO Auto-generated method stub
-  throw new UnsupportedOperationException("Unimplemented method 'findUser'");
- }
+ List<Purchase> findPurchases();
 
+ Purchase findPurchase(Long id);
+
+ Purchase buy(Cart cart, User buyer) throws Exception;
 }
