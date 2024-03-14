@@ -48,7 +48,7 @@ public class Supermarket implements SupermarketLocal, SupermarketRemote {
   }
 
   @Override
-  public List<Purchase> findPurchases() {
+  public static List<Purchase> findPurchases() {
     TypedQuery<Purchase> query = em.createQuery("SELECT p FROM Purchase p", Purchase.class);
     return query.getResultList();
   }
