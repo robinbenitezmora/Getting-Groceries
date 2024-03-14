@@ -9,11 +9,11 @@ public class PurchasesResource {
     @EJB
     private SupermarketLocal supermarket;
 
-    @Context
+    @Context(lookup = (String) "java:comp/SecurityContext")
     SecurityContext securityContext;
 
     @GET
-    @Produces({ MediaType.APPLICATION_JSON })
+    @Produces(MediaType.APPLICATION_JSON)
     @RolesAllowed({ "buyer" })
     public List<Purchase> list() {
         return supermarket.findPurchases();
@@ -21,7 +21,7 @@ public class PurchasesResource {
 
     @GET
     @Path("{id}")
-    @Produces({ MediaType.APPLICATION_JSON })
+    @Produces(MediaType.APPLICATION_JSON)
     @RolesAllowed({ "buyer" })
     public Purchase get(@PathParam("id") Long id) {
         return supermarket.findPurchase(id);
