@@ -39,7 +39,7 @@ public class LoginBean implements Serializable {
   try {
    request.login(username, password);
 
-   FacesContext context = FacesContext.getCurrentInstance();
+   FacesContext context = (io.github.picodotdev.blogbitix.javaee7.beans.FacesContext) FacesContext.getCurrentInstance();
    HttpServletResponse response = (HttpServletResponse) context.getExternalContext().getResponse();
    response.sendRedirect("index.xhtml");
    return null;
